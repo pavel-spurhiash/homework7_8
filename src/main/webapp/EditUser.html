@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<div class="block">
+    <h2>Edit User Form</h2>
+
+    <form action="/app/edit" method="post">
+        <lable class = "form_label">User ID:</lable>
+        <input class = "form_input" type="number" name="id" placeholder="required" required>
+        <br>
+        <lable class = "form_label">New Address:</lable>
+        <input class = "form_input" type="text" name="address">
+        <br>
+        <lable class = "form_label">Phone Number:</lable>
+        <input class = "form_input" type="number" name="telephone">
+        <br><br>
+        <input class="myButton" type="submit" value="Execute (submit)">
+    </form>
+
+    <p>If you click the "Submit" button, the form-data will be sent to a page called "/edit".</p>
+    <a href="/app"><< Go Home</a>
+</div>
+</html>

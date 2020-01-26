@@ -23,19 +23,28 @@ public class UserServiceImpl implements UserService {
 
     private static final Logger logger = LogManager.getLogger(MethodHandles.lookup().lookupClass());
 
-    private ConnectionRepository connectionRepository = ConnectionRepositoryImpl.getInstance();
-    private UserRepository userRepository = UserRepositoryImpl.getInstance();
-    private UserInformationRepository userInformationRepository = UserInformationRepositoryImpl.getInstance();
+    private ConnectionRepository connectionRepository;
+    private UserRepository userRepository;
+    private UserInformationRepository userInformationRepository;
 
     private static UserService instance;
 
-    private UserServiceImpl() {
+    private UserServiceImpl(
+            ConnectionRepository connectionRepository,
+            UserRepository userRepository,
+            UserInformationRepository userInformationRepository
+    ) {
+        this.connectionRepository = connectionRepository;
+        this.userRepository = userRepository;
+        this.userInformationRepository = userInformationRepository;
     }
 
     public static UserService getInstance() {
         if (instance == null) {
-            instance = new UserServiceImpl();
-
+            instance = new UserServiceImpl(
+                    ConnectionRepositoryImpl.getInstance(),
+                    UserRepositoryImpl.getInstance(),
+                    UserInformationRepositoryImpl.getInstance());
         }
         return instance;
     }

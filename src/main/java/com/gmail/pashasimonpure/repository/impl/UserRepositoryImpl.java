@@ -9,8 +9,6 @@ import java.util.List;
 
 public class UserRepositoryImpl implements UserRepository {
 
-    private static final String DATABASE_NAME = "jd2_homework7_8";
-
     private static UserRepository instance;
 
     private UserRepositoryImpl() {

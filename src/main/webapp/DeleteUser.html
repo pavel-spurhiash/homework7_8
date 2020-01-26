@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<div class="block">
+    <h2>Delete User Form</h2>
+
+    <form action="/app/delete" method="post">
+        <lable class = "form_label">User ID:</lable>
+        <input class = "form_input" type="text" name="id" placeholder="required" required>
+        <br><br>
+        <input class="myButton" type="submit" value="Execute (submit)">
+    </form>
+
+    <p>If you click the "Submit" button, the form-data will be sent to a page called "/delete".</p>
+    <a href="/app"><< Go Home</a>
+</div>
+</html>
